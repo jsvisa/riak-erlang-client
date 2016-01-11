@@ -1718,7 +1718,7 @@ remove_queued_request(Ref, State) ->
     end.
 
 %% @private
-mk_reqid() -> erlang:phash2(erlang:now()). % only has to be unique per-pid
+mk_reqid() -> erlang:phash2(erlang:timestamp()). % only has to be unique per-pid
 
 %% @private
 wait_for_list(ReqId) ->
